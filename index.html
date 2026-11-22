@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galaxia Explorer: recorré el sistema solar, conocé cada planeta y calculá cuánto pesarías en cada uno.">
+  <title>Galaxia Explorer · Viaje interactivo por el sistema solar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <canvas id="estrellas" aria-hidden="true"></canvas>
+
+  <main>
+    <section class="hero">
+      <h1>Galaxia<br>Explorer</h1>
+      <p>Mantené presionado el botón para saltar a la velocidad de la luz.</p>
+      <button class="warp" id="warp">Mantener para acelerar</button>
+      <p class="velocidad" aria-live="polite">Velocidad: <strong id="velocidad">1</strong>× luz</p>
+    </section>
+
+    <section class="sistema">
+      <h2>Elegí un planeta</h2>
+      <div class="orbita" id="orbita" role="listbox" aria-label="Planetas del sistema solar"></div>
+
+      <article class="ficha" id="ficha" aria-live="polite">
+        <div class="ficha-planeta" id="fichaPlaneta"></div>
+        <div>
+          <h3 id="fichaNombre"></h3>
+          <p id="fichaDesc"></p>
+          <dl class="datos">
+            <div><dt>Distancia al Sol</dt><dd id="fichaDist"></dd></div>
+            <div><dt>Duración del año</dt><dd id="fichaAnio"></dd></div>
+            <div><dt>Lunas</dt><dd id="fichaLunas"></dd></div>
+          </dl>
+        </div>
+      </article>
+    </section>
+
+    <section class="peso">
+      <h2>¿Cuánto pesarías allá?</h2>
+      <label for="kg">Tu peso en la Tierra (kg)</label>
+      <input type="range" id="kg" min="20" max="150" value="60">
+      <output id="kgValor" for="kg">60 kg</output>
+      <ul class="pesos" id="pesos"></ul>
+    </section>
+  </main>
+
+  <footer class="pie">Datos aproximados de la NASA · Proyecto de práctica con Canvas y JavaScript</footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
